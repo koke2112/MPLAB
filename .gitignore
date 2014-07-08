@@ -21,3 +21,9 @@
 *.i*86
 *.x86_64
 *.hex
+
+#Directories
+
+[Bb]uild
+pruebas16lf.X/dist/
+pruebas16lf.X/nbproject/
