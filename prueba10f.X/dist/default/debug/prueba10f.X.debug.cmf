@@ -1,0 +1,217 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/cgtmgbyUS.obj
+end_init CODE 0 1 1 1 2
+reset_vec CODE 0 0 0 1 2
+config CONFIG 0 2007 2007 1 2
+$dist/default/debug/prueba10f.X.debug.obj
+cinit CODE 0 2 2 2 2
+text1 CODE 0 12 12 1 2
+maintext CODE 0 4 4 E 2
+cstackBANK0 BANK0 1 40 40 6 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+BANK0 0046-007D 1
+CODE 0013-00FF 2
+CONST 0013-00FF 2
+ENTRY 0013-00FF 2
+IDLOC 2000-2003 2
+RAM 0046-007D 1
+SFR0 0000-003F 1
+STACK 0046-007D 1
+STRCODE 0013-00FF 2
+STRING 0013-00FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <file name>:<line number> <address> <psect name> <class name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug/prueba10f.X.debug.obj
+"/opt/microchip/xc8/v1.30/include/pic10f320.h":183 0 text0 CODE
+"/tmp/cgtX8Ok5X":350 2 cinit CODE
+"/tmp/cgtX8Ok5X":353 2 cinit CODE
+"/tmp/cgtX8Ok5X":359 2 cinit CODE
+"/tmp/cgtX8Ok5X":360 2 cinit CODE
+"/tmp/cgtX8Ok5X":361 3 cinit CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":37 4 maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":41 4 maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":42 5 maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":43 6 maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":44 B maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":45 C maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/newmain.c":48 11 maintext CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/TimeDelay.c":176 12 text1 CODE
+"/home/jorgesm/MPLABXProjects/prueba10f.X/TimeDelay.c":215 12 text1 CODE
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__S0 2008 0 ABS 0 - -
+__S1 46 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__Hintentry 2 0 CODE 0 intentry -
+__Lintentry 2 0 CODE 0 intentry -
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+_main 8 0 CODE 0 maintext dist/default/debug/prueba10f.X.debug.obj
+___sp 0 0 STACK 2 stack /tmp/cgtmgbyUS.obj
+btemp 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ltemp 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+start 2 0 CODE 0 init /tmp/cgtmgbyUS.obj
+_TRISA 6 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/cgtmgbyUS.obj
+ltemp0 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp0 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp0 7E 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ltemp1 82 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp1 81 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp1 80 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ltemp2 86 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp2 84 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp2 82 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ltemp3 80 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp3 87 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp3 84 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+ttemp4 7F 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp4 86 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp5 88 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+wtemp6 7F 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hconfig 4010 0 CONFIG 0 config -
+__Lconfig 400E 0 CONFIG 0 config -
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__CFG_LPBOR$ON 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Lfunctab 0 0 CODE 0 functab -
+__Hcommon 0 0 ABS 0 common -
+__Lcommon 0 0 ABS 0 common -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+___int_sp 0 0 STACK 2 stack /tmp/cgtmgbyUS.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Labs1 0 0 ABS 0 abs1 -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Hcode 0 0 ABS 0 code -
+__Lcode 0 0 ABS 0 code -
+DelayMs@ms 40 0 BANK0 1 cstackBANK0 dist/default/debug/prueba10f.X.debug.obj
+stackhi 0 0 ABS 0 - /tmp/cgtmgbyUS.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__pcstackBANK0 40 0 BANK0 1 cstackBANK0 dist/default/debug/prueba10f.X.debug.obj
+stacklo 0 0 ABS 0 - /tmp/cgtmgbyUS.obj
+__Hinit 2 0 CODE 0 init -
+__Linit 2 0 CODE 0 init -
+__end_of_main 24 0 CODE 0 maintext dist/default/debug/prueba10f.X.debug.obj
+__Htext 0 0 ABS 0 text -
+__Ltext 0 0 ABS 0 text -
+end_of_initialization 4 0 CODE 0 cinit dist/default/debug/prueba10f.X.debug.obj
+__end_of_DelayMs 26 0 CODE 0 text1 dist/default/debug/prueba10f.X.debug.obj
+_PORTAbits 5 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hstrings 0 0 ABS 0 strings -
+__Lstrings 0 0 ABS 0 strings -
+__Hbank0 0 0 ABS 0 bank0 -
+__Lbank0 0 0 ABS 0 bank0 -
+___latbits 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__Lpowerup 0 0 CODE 0 powerup -
+__ptext0 0 0 CODE 0 text0 dist/default/debug/prueba10f.X.debug.obj
+__ptext1 24 0 CODE 0 text1 dist/default/debug/prueba10f.X.debug.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__Lclrtext 0 0 ABS 0 clrtext -
+__end_of__initialization 4 0 CODE 0 cinit dist/default/debug/prueba10f.X.debug.obj
+__size_of_DelayMs 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Lstack 0 0 STACK 2 stack -
+_DelayMs 24 0 CODE 0 text1 dist/default/debug/prueba10f.X.debug.obj
+__Hcinit 8 0 CODE 0 cinit -
+__Lcinit 4 0 CODE 0 cinit -
+__size_of_main 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__CFG_BORV$LO 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__Hend_init 4 0 CODE 0 end_init -
+__Lend_init 2 0 CODE 0 end_init -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+intlevel0 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+intlevel1 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+intlevel2 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+intlevel3 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+intlevel4 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+intlevel5 0 0 CODE 0 functab /tmp/cgtmgbyUS.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/debug/prueba10f.X.debug.obj
+start_initialization 4 0 CODE 0 cinit dist/default/debug/prueba10f.X.debug.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__Lmaintext 0 0 ABS 0 maintext -
+__pmaintext 8 0 CODE 0 maintext dist/default/debug/prueba10f.X.debug.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__initialization 4 0 CODE 0 cinit dist/default/debug/prueba10f.X.debug.obj
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug/prueba10f.X.debug.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect in on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+reset_vec 0 0 0 13 2
+config 0 2007 400E 1 2
+cstackBANK0 1 40 40 6 1

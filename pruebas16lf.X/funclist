@@ -1,0 +1,16 @@
+_loop: CODE, 1454 0 10
+___awdiv: CODE, 1692 0 83
+_vRef: CODE, 1434 0 4
+___ftpack: CODE, 1775 0 96
+_main: CODE, 1438 0 4
+__initialization: CODE, 2034 0 12
+_delayS: CODE, 1627 0 65
+_medida_COMP: CODE, 1464 0 10
+_delayMs: CODE, 1557 0 33
+_setup: CODE, 1474 0 18
+___awtoft: CODE, 1524 0 33
+___wmul: CODE, 1492 0 32
+_clockInit: CODE, 1446 0 8
+_algoritmo1: CODE, 1590 0 37
+_move_to: CODE, 1871 0 163
+Total: 608

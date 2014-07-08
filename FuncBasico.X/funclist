@@ -1,0 +1,19 @@
+_loop: CODE, 1072 0 12
+___awdiv: CODE, 1471 0 83
+_vRef: CODE, 1054 0 4
+___ftpack: CODE, 1554 0 96
+_main: CODE, 1051 0 3
+___ftadd: CODE, 1790 0 244
+_delayUs: CODE, 1270 0 63
+__initialization: CODE, 2034 0 12
+_delayS: CODE, 1402 0 69
+_medida_COMP: CODE, 1062 0 10
+_delayMs: CODE, 1333 0 69
+_setup: CODE, 1084 0 14
+___awtoft: CODE, 1178 0 33
+___wmul: CODE, 1146 0 32
+___ftsub: CODE, 1098 0 24
+_algoritmo1: CODE, 1122 0 24
+___ftge: CODE, 1211 0 59
+_mover: CODE, 1650 0 140
+Total: 991
