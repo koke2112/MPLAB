@@ -65,7 +65,7 @@ int paso=1; //longitud del paso en mm
 int va=0; //guarda la posicion donde tiene q ir el sintonizador.
 //int x=0; //offset a la posicion incial del sinto
 int pos=0;//Posicion actual del sintonizador.
-
+int dest=0;
 /*
  * Metodo de delay en microsegundos si el reloj es el de 16MHz
  * Averiguar maxima cuenta
@@ -213,7 +213,7 @@ void mover (int v){
  */
 void move_to(int x){
 
-   va=x-pos;
+   int m=x-pos;
    //va=va+x;
 
     #if defined DEBUG
@@ -238,22 +238,31 @@ void move_to(int x){
     }
 #else
         //se usan RA0 y RA1
-    if(va>0){    // mover hacia adelante RC0
+    if(m>0){    // AOUT1
          /* Calcular el tiempo de excitacion necesario para mover una distancia.
           * La distancia van a ser multiplos del paso.
           */
-        PORTAbits.RA0=1;
+        //PORTAbits.RA2=1;//salidas B
+        //PORTAbits.RA0=1;//salidas A
+        PORTA=0b00101101;
         //LATAbits.LATA0=1;
-        delayS(paso*(60/rpm)*va);
+        delayS(paso*(60/rpm)*m);
         //delayS(2);
-        PORTAbits.RA0=0;
+        //PORTAbits.RA2=0;
+        //PORTAbits.RA0=0;
+        PORTA=0b00101000;
         //LATAbits.LATA0=0;
-    }else{
-        PORTAbits.RA1=1;
+    }else{//AOUT2
+        m=m*(-1);
+        //PORTAbits.RA4=1;
+        //PORTAbits.RA1=1;
+        PORTA=0b00111010;
         //LATAbits.LATA1=1;
-        delayS(paso*(60/rpm)*va*(-1));
+        delayS(paso*(60/rpm)*m);
         //delayS(2);
-        PORTAbits.RA1=0;
+        //PORTAbits.RA4=0;
+        //PORTAbits.RA1=0;
+        PORTA=0b00101000;
         //LATAbits.LATA1=0;
     }
     delayS(1);//intentar reducir esto. sirve para que funcione el cambio de direccion del motor
@@ -266,16 +275,17 @@ void move_to(int x){
  */
 void algoritmo1(){
    
-       
-       if(pos>0){
-           pos++;
+
+       if(pos>=0){
+          dest++;
        }
        else if(pos<0){
-           pos--;
+          dest--;
        }
-       pos=pos*(-1);
+       dest=dest*(-1);
        //mover(va);
-       move_to(pos);
+       move_to(dest);
+       pos=dest;//actualizacion de la posicion actual
 //       if (x<0){
 //          LATCbits.LATC3=1;
 //        //delayS(paso*(60/rpm)*v);
@@ -310,6 +320,8 @@ void setup(){
     PORTAbits.RA5=1;
     TRISAbits.TRISA0=0;
     TRISAbits.TRISA1=0;
+    TRISAbits.TRISA2=0;
+    TRISAbits.TRISA4=0;
     #endif
     delayS(1);   //para dejar que se estabilice todo
 
@@ -321,6 +333,7 @@ void setup(){
 void loop(){
     va=0;//posicion de la anterior sintonizacion
     pos=0;
+    dest=0;
     while(CM2CON0bits.C2OUT==1){
         algoritmo1();
     }
